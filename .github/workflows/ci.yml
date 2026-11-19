@@ -1,0 +1,22 @@
+name: CI - Pruebas de regresión
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  regression-tests:          # <- este nombre es el "status check" que se exige en la rama protegida
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Ejecutar suite de regresión
+        run: npm test

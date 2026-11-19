@@ -1,0 +1,11 @@
+{
+  "name": "regression-lab",
+  "version": "1.0.0",
+  "description": "Laboratorio Grupo 7: pruebas de regresión + CI/CD con GitHub Actions",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20" },
+  "license": "ISC"
+}
