@@ -6,7 +6,7 @@ const CUPONES = { BIENVENIDA: 0.1, VIP: 0.2 };
 
 export function calcularEnvio(subtotal) {
   if (subtotal <= 0) throw new RangeError("El subtotal debe ser positivo");
-  return subtotal >= ENVIO_GRATIS_DESDE ? 0 : COSTO_ENVIO;
+  return subtotal > ENVIO_GRATIS_DESDE ? 0 : COSTO_ENVIO;
 }
 
 export function aplicarCupon(subtotal, cupon) {
